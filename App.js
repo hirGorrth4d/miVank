@@ -8,8 +8,10 @@ import Movements from './screens/Movements'
 import CreditCards from './screens/CreditCards'
 import Benefits from './screens/Benefits';
 
+import store from './store'
 
 const Tab = createBottomTabNavigator();
+
 
 
 export default function App() {
