@@ -2,10 +2,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 //screens
-import HomeScreen from './screens/HomeScreen'
-import Movements from './screens/Movements'
-import CreditCards from './screens/CreditCards'
-import Benefits from './screens/Benefits';
+import HomeScreen from '../screens/HomeScreen'
+import Movements from '../screens/Movements'
+import CreditCards from '../screens/CreditCards'
+import Benefits from '../screens/Benefits';
 
 
 const Tab = createBottomTabNavigator();

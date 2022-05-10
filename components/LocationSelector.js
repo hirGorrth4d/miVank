@@ -3,7 +3,7 @@ import {View, Button, Text, StyleSheet, Alert} from 'react-native'
 import * as Location from 'expo-location'
 import MapPreview from './MapPreview'
 import { useNavigation, useRoute } from '@react-navigation/native'
-
+import COLORS from '../constants/colors'
 const LocationSelector = props => {
     const navigation = useNavigation()
     const [pickedLocation, setPickedLocation] = useState()

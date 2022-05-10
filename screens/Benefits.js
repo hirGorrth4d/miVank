@@ -4,12 +4,12 @@ import LocationSelector from '../components/LocationSelector';
 import { NavigationContainer } from "@react-navigation/native";
 
 // stacks
-import PlaceNavigator from './PlaceNavigator'
+import PlaceNavigator from '../navigation/PlaceNavigator'
 
 
 function Benefits() {
   return (
-    <NavigationContainer>
+    <NavigationContainer independent={true}>
       <View>
         <Text>Aca va a haber locales con geolocalizacion para ver beneficios del banco en comercios</Text>
         <LocationSelector />

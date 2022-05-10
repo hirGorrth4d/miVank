@@ -1,4 +1,4 @@
-export default {
+export default COLORS ={
   DARK_SIENNA: "#450920",
   MAROON: "#a53860",
   BLUSH: "#da627d",

@@ -3,7 +3,7 @@ import  MAP  from '../constants/Maps'
 
 export const ADD_PLACE = 'ADD_PLACE'
 
-export const addPlace = (title, image, location) =>{
+const addPlace = (title, image, location) =>{
     return async dispatch => {
         const response = await fetch (`https://maps.googleapis.com/maps/api/geocode/json?latlng=${location.lat},${location.lng}&key=${MAP.API_KEY}`)
 
@@ -41,3 +41,5 @@ export const addPlace = (title, image, location) =>{
         dispatch({type: ADD_PLACE, payload: {title, address, image: Path, lat: location.lat,lng: location.lng}})
     }
 }
+
+export default addPlace

@@ -2,7 +2,7 @@ import React from 'react'
 import { Platform, TouchableOpacity } from 'react-native' 
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { Ionicons } from '@expo/vector-icons'
-import { COLORS } from '../constants' 
+import { COLORS } from '../constants/colors' 
 
 // screens
 import PlaceListScreen from '../screens/PlaceListScreen'
