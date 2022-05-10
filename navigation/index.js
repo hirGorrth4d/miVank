@@ -1,11 +1,12 @@
 import React from 'react'
 import { NavigationContainer } from "@react-navigation/native";
+import TabNavigator from './TabsNavigator';
 
 // stacks
-import PlaceNavigator from './PlaceNavigator'
+
 
 export default () => (
     <NavigationContainer>
-        <PlaceNavigator />
+        <TabNavigator />
     </NavigationContainer>
 )

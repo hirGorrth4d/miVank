@@ -1,12 +1,13 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import {View, Button, Text, StyleSheet, Alert} from 'react-native'
 import * as Location from 'expo-location'
 import MapPreview from './MapPreview'
-import { useNavigation } from '@react-navigation/native'
+import { useNavigation, useRoute } from '@react-navigation/native'
 
 const LocationSelector = props => {
     const navigation = useNavigation()
     const [pickedLocation, setPickedLocation] = useState()
+    const route = useRoute()
 
     const handleGetLocation = async () => {
         const isLocationOk = await verifyPermissions();
@@ -44,24 +45,61 @@ const LocationSelector = props => {
         return true;
     }
 
+    const mapLocation = route?.params?.mapLocation
+
+    useEffect(() => {
+        if(mapLocation){
+            setPickedLocation(mapLocation)
+            props.onLocation(mapLocation)
+        }
+    }, [mapLocation])
+    
+
     return (
-        <View>
+        <View style={styles.container}>
             <View>
-                <MapPreview location={pickedLocation}>
+                <MapPreview location={pickedLocation} style={styles.preview}>
                     <Text>location en proceso</Text>
                 </MapPreview>
             </View>
-            <Button
-                title="Obtener Ubicacion"
-                onPress={handleGetLocation}
-            />
-            <Button
-                title='Elegir del mapa'
-                onPress={handlePickOnMap}
-            />
+            <View style={styles.actions}>
+
+                <Button
+                    title="Obtener Ubicacion"
+                    onPress={handleGetLocation}
+                />
+                <Button
+                    title='Elegir del mapa'
+                    onPress={handlePickOnMap}
+                />
+            </View>
         </View>
     )
 }
+
+
+const styles = StyleSheet.create({
+    container: {
+        marginBottom: 10
+    },
+    preview: {
+        width: '100%',
+        height: 200,
+        marginBottom: 10,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderColor: COLORS.BLUSH,
+        borderWidth: 1
+    },
+    image: {
+        width: '100%',
+        height: '100%'
+    },
+    actions: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+    }
+})
 
 
 export default LocationSelector
