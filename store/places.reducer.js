@@ -1,4 +1,4 @@
-import { ADD_PLACE } from './places.action';
+import { ADD_PLACE, LOAD_PLACES } from './places.action';
 import Place from '../models/Place';
 
 const initialState = {
@@ -9,6 +9,7 @@ export default (state = initialState, action) => {
     console.log("Reducer");
     switch(action.type) {
         case ADD_PLACE:
+
             console.log(ADD_PLACE);
             const newPlace = new Place(Date.now(), 
                 action.payload.title, 
@@ -21,6 +22,15 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 places: state.places.concat(newPlace),
+            }
+        case LOAD_PLACES: 
+            return{
+                 ...state,
+                places: action.places.map(item => new Place (
+                    item.id.toString(),
+                    item.title,
+                    item.image
+                ))
             }
         default:
             return state
