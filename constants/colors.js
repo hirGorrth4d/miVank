@@ -1,7 +1,7 @@
 export default COLORS ={
-  DARK_SIENNA: "#450920",
-  MAROON: "#a53860",
-  BLUSH: "#da627d",
-  LIGTH_PINK: "#ffa5ab",
-  PEACH_PUFF: "#f9dbbd",
+  DARK_SIENNA: "#4B40A1",
+  MAROON: "#6553ED",
+  BLUSH: "#C9ED47",
+  LIGTH_PINK: "#A12070",
+  PEACH_PUFF: "#ED3BAA",
 };

@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 function Movements() {
   return (
-    <View><Text>Aca va a haber locales con geolocalizacion para ver beneficios del banco en comercios</Text></View>
+    <View><Text>Tus movimientos del banco</Text></View>
   )
 }
 

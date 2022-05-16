@@ -12,14 +12,14 @@ const Tab = createBottomTabNavigator();
 
 const TabNavigator = () => {
     return (
-        <NavigationContainer>
-            <Tab.Navigator>
-                <Tab.Screen name='Home' component={HomeScreen}/>
-                <Tab.Screen name='Movimientos' component={Movements} />
-                <Tab.Screen name='Tarjetas' component={CreditCards} />
-                <Tab.Screen name='Beneficios' component={Benefits} />
-            </Tab.Navigator>
-        </NavigationContainer>
+
+        <Tab.Navigator>
+            <Tab.Screen name='Home' component={HomeScreen}/>
+            <Tab.Screen name='Movimientos' component={Movements} />
+            <Tab.Screen name='Tarjetas' component={CreditCards} />
+            <Tab.Screen name='Beneficios' component={Benefits} />
+        </Tab.Navigator>
+
     );
 }
 
