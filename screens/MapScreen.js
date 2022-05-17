@@ -1,12 +1,15 @@
 import { Ionicons } from "@expo/vector-icons";
-import { NavigationContainer } from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
+import {useState} from 'react'
 import { useLayoutEffect } from "react";
 import MapView from "react-native-maps";
 import { TouchableOpacity } from "react-native-web";
 
+
 const MapScreen = () =>{
     const [selectedLocation, setSelectedLocation] = useState()
+    const navigation = useNavigation()
     const initialRegion = {
         latitude:37.4219023,
         longitude: -122.0839984,
@@ -16,7 +19,7 @@ const MapScreen = () =>{
 
     const handleSaveSelection = () =>{
         if(selectedLocation) {
-            NavigationContainer.navigate("Nuevo", {mapLocation: selectedLocation})
+           navigation.navigate("Nuevo", {mapLocation: selectedLocation})
         }
     }
     useLayoutEffect(()=>{

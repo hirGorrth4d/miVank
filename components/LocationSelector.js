@@ -4,6 +4,7 @@ import * as Location from 'expo-location'
 import MapPreview from './MapPreview'
 import { useNavigation, useRoute } from '@react-navigation/native'
 import COLORS from '../constants/colors'
+
 const LocationSelector = props => {
     const navigation = useNavigation()
     const [pickedLocation, setPickedLocation] = useState()
@@ -68,10 +69,10 @@ const LocationSelector = props => {
                     title="Obtener Ubicacion"
                     onPress={handleGetLocation}
                 />
-                <Button
+                {/* <Button
                     title='Elegir del mapa'
                     onPress={handlePickOnMap}
-                />
+                /> */}
             </View>
         </View>
     )

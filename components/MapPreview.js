@@ -1,6 +1,6 @@
 import React from 'react'
 import {View, Image, StyleSheet} from 'react-native'
-import MAP from '../constants/Maps'
+import MAP from '../constants/Map'
 
 function MapPreview(props) {
 

@@ -15,6 +15,8 @@ function Benefits() {
         <LocationSelector />
         
         <PlaceNavigator />
+
+        <Text>Selecciona tu ubicacion para encontrar locales con beneficios</Text>
       </View>
 
   )
