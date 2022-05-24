@@ -1,10 +1,13 @@
 import React from 'react'
 import { StyleSheet, Text, View, Button } from 'react-native';
-
+import Cards from '../components/cards';
 
 function CreditCards() {
   return (
-    <View><Text>Aca va a haber locales con geolocalizacion para ver beneficios del banco en comercios</Text></View>
+    <View>
+      <Cards titulo="Mastercard" info="Tu saldo al cierre es $10.893,41"/>
+      <Cards titulo="Visa" info="Esperando cierre de la tarjeta"/>
+    </View>
   )
 }
 

@@ -17,12 +17,23 @@ function HomeScreen() {
             })
             .catch(error => alert(error.message))
     }
+
+    const movementRedirect = () =>{
+        navigation.navigate('Movimientos')
+    }
+    const cardRedirect = () =>{
+        navigation.navigate('Tarjetas')
+    }
     return (
         <View style={styles.container}>
             <Text>Email: {auth.currentUser?.email}</Text>
-            <Cards titulo="Saldo" info="Este es tu saldo"/>
-            <Cards titulo="Movimientos" info="ultimo movimiento"/>
-            <Cards titulo="Tarjetas" info="Saldo de tarjeta"/>
+            <Cards titulo="Tu Saldo actual" info="$70.893,41"/>
+            <TouchableOpacity  onPress={movementRedirect}>
+                <Cards titulo="Movimientos" info="ultimo movimiento"/>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={cardRedirect}>
+                <Cards titulo="Tarjetas" info="Saldo de tarjeta"/>
+            </TouchableOpacity>
             <TouchableOpacity
                 onPress={handleSignout}
             >
