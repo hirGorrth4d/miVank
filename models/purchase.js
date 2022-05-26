@@ -1,4 +1,4 @@
-export default [
+const purchaseData = [
     {
         id: 1,
         modo: "debito",
@@ -22,3 +22,5 @@ export default [
     },
     
 ]
+
+export default purchaseData

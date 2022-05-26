@@ -4,7 +4,7 @@ import Cards from '../components/cards';
 
 function CreditCards() {
   return (
-    <View>
+    <View style={styles.container}>
       <Cards titulo="Mastercard" info="Tu saldo al cierre es $10.893,41"/>
       <Cards titulo="Visa" info="Esperando cierre de la tarjeta"/>
     </View>
@@ -18,7 +18,6 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
         alignItems: 'center',
-        justifyContent: 'center',
         },
     });
     

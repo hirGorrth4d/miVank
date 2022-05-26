@@ -1,27 +1,30 @@
 import React from 'react'
 import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import purchaseData from  "../models/purchase"
 
-function Movements() {
-  const renderPurchase = ({item}) => {
-    <View style={styles.purchase}>
+const Item = ({tienda, price, purchaseDate}) => {
+  <View style={styles.purchase}>
       <View>
-        <Text>{item.tienda}</Text>
-        <Text>{item.price}</Text>
-        <Text>{item.purchaseDate}</Text>
+        <Text>{tienda}</Text>
+        <Text>{price}</Text>
+        <Text>{purchaseDate}</Text>
       </View>
     </View>
-    purchaseData.map(x => {
-      
-    })
+}
+function Movements() {
+  const renderPurchase = ({item}) => {
+    <Item tienda={item.tienda} price={item.price} purchaseDate={item.purchaseDate} />
   }
   return (
-    <View><Text>Ultimos Movimientos</Text>
+    <SafeAreaView style={styles.container}><Text>Ultimos Movimientos</Text>
+
       <FlatList
         data={purchaseData} 
         renderItem={renderPurchase}
+        keyExtractor={item => item.id}
         />
-    </View>
+    </SafeAreaView>
   )
 }
 
