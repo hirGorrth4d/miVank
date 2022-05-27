@@ -1,12 +1,13 @@
 import React from 'react'
 import { StyleSheet, Text, View, Button } from 'react-native';
-import Cards from '../components/cards';
+import TarjetasCards from '../components/tarjetasCard';
+import balance from '../components/balance'
 
 function CreditCards() {
   return (
     <View style={styles.container}>
-      <Cards titulo="Mastercard" info="Tu saldo al cierre es $10.893,41"/>
-      <Cards titulo="Visa" info="Esperando cierre de la tarjeta"/>
+      <TarjetasCards titulo="Mastercard" info={balance()}/>
+      <TarjetasCards titulo="Visa" info="Esperando cierre de la tarjeta"/>
     </View>
   )
 }
